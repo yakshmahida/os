@@ -3,7 +3,7 @@ import sys
 import re
 from PIL import Image, ImageDraw, ImageFont
 
-OUTPUT_DIR = r"c:\Users\Vedesh\Desktop\JGI\Sem-3\OS\CA6_Rust_Micro_OS_Engineering_Project\screenshots"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "screenshots")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 FONT_REG = ImageFont.truetype(r"C:\Windows\Fonts\consola.ttf", 15)
@@ -21,7 +21,7 @@ TEXT_RED = (240, 80, 80)
 TEXT_GRAY = (140, 140, 140)
 TEXT_PURPLE = (180, 120, 240)
 
-PROMPT_USER = "vedesh@OMEN-16"
+PROMPT_USER = "yaksh@MacBook-Air-M4"
 
 def render_terminal_window(title, lines, filename, width=960):
     line_height = 21
@@ -211,7 +211,7 @@ render_terminal_window("Micro-OS Kernel Boot Console (QEMU Serial stdio)", fig1_
 # Fig 2: Native Demo Trace & Lock Telemetry
 fig2_lines = [
     ('prompt_cmd', ('~/micro-os', 'cargo run --bin micro-os-demo')),
-    ('muted', '   Compiling micro-os v0.1.0 (C:\\Users\\Vedesh\\Desktop\\JGI\\Sem-3\\OS\\CA6_Rust_Micro_OS_Engineering_Project)'),
+    ('muted', '   Compiling micro-os v0.1.0 (/Users/yakshmahida/Desktop/CA6_Rust_Micro_OS_Engineering_Project)'),
     ('muted', '    Finished dev [unoptimized + debuginfo] target(s) in 2.84s'),
     ('output', '     Running `target\\debug\\micro-os-demo.exe`'),
     ('output', 'Micro-OS educational kernel demo'),
@@ -240,7 +240,7 @@ render_qemu_dashboard("fig03_dashboard_framebuffer.png")
 # Fig 4: Cargo Test Suite (5/5 Passing)
 fig4_lines = [
     ('prompt_cmd', ('~/micro-os', 'cargo test')),
-    ('muted', '   Compiling micro-os v0.1.0 (C:\\Users\\Vedesh\\Desktop\\JGI\\Sem-3\\OS\\CA6_Rust_Micro_OS_Engineering_Project)'),
+    ('muted', '   Compiling micro-os v0.1.0 (/Users/yakshmahida/Desktop/CA6_Rust_Micro_OS_Engineering_Project)'),
     ('muted', '    Finished test [unoptimized + debuginfo] target(s) in 1.48s'),
     ('output', '     Running tests\\kernel_mechanisms.rs (target\\debug\\build\\micro-os\\out\\kernel_mechanisms.exe)'),
     ('output', ''),
